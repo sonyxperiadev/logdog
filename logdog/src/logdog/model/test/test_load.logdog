@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LogLineMatchers>
+    <LogLineMatcher>
+        <Name>Some valid matcher for logcat_events 0</Name>
+        <Source>logcat_events</Source>
+        <RegExp>^(\d{2}-\d{2} \d{2}:\d{2}:\d{2}.\d{3}) .*?GC_CONCURRENT freed ([0-9].*?)K, .*?$</RegExp>
+        <GroupNames>
+          <Name>colorTemp</Name>
+          <Name>aeLevel</Name>
+        </GroupNames>
+    </LogLineMatcher>
+    <LogLineMatcher>
+        <Name>Some valid matcher for logcat_radio 1</Name>
+        <Source>logcat_radio</Source>
+        <RegExp>^(\d{2}-\d{2} \d{2}:\d{2}:\d{2}.\d{3}) .*?GC_CONCURRENT freed ([0-9].*?)K, .*?$</RegExp>
+    </LogLineMatcher>
+    <LogLineMatcher>
+        <Name>Some valid matcher for kernel 2</Name>
+        <Source>kernel</Source>
+        <RegExp>^(\d{2}-\d{2} \d{2}:\d{2}:\d{2}.\d{3}) .*?GC_CONCURRENT freed ([0-9].*?)K, .*?$</RegExp>
+    </LogLineMatcher>
+    <LogLineMatcher>
+        <Name>Some valid matcher for logcat_radio 3</Name>
+        <Source>logcat_radio</Source>
+        <RegExp>^(\d{2}-\d{2} \d{2}:\d{2}:\d{2}.\d{3}) .*?GC_CONCURRENT freed ([0-9].*?)K, .*?$</RegExp>
+    </LogLineMatcher>
+    <LogLineMatcher>
+        <Name>Some valid matcher for kernel 4</Name>
+        <Source>kernel</Source>
+        <RegExp>^(\d{2}-\d{2} \d{2}:\d{2}:\d{2}.\d{3}) .*?GC_CONCURRENT freed ([0-9].*?)K, .*?$</RegExp>
+    </LogLineMatcher>
+    <LogLineMatcher>
+        <Name>Some valid matcher for kernel 5</Name>
+        <Source>kernel</Source>
+        <RegExp>^(\d{2}-\d{2} \d{2}:\d{2}:\d{2}.\d{3}) .*?GC_CONCURRENT freed ([0-9].*?)K, .*?$</RegExp>
+    </LogLineMatcher>
+    <LogLineMatcher>
+        <Name>Some valid matcher for kernel 6</Name>
+        <Source>kernel</Source>
+        <RegExp>^(\d{2}-\d{2} \d{2}:\d{2}:\d{2}.\d{3}) .*?GC_CONCURRENT freed ([0-9].*?)K, .*?$</RegExp>
+    </LogLineMatcher>
+    <LogLineMatcher>
+        <Name>Some valid matcher for logcat_events 7</Name>
+        <Source>logcat_events</Source>
+        <RegExp>^(\d{2}-\d{2} \d{2}:\d{2}:\d{2}.\d{3}) .*?GC_CONCURRENT freed ([0-9].*?)K, .*?$</RegExp>
+    </LogLineMatcher>
+    <LogLineMatcher>
+        <Name>Some valid matcher for logcat_events 8</Name>
+        <Source>logcat_events</Source>
+        <RegExp>^(\d{2}-\d{2} \d{2}:\d{2}:\d{2}.\d{3}) .*?GC_CONCURRENT freed ([0-9].*?)K, .*?$</RegExp>
+    </LogLineMatcher>
+    <LogLineMatcher>
+        <Name>Some valid matcher for logcat_main 9</Name>
+        <Source>logcat_main</Source>
+        <RegExp>^(\d{2}-\d{2} \d{2}:\d{2}:\d{2}.\d{3}) .*?GC_CONCURRENT freed ([0-9].*?)K, .*?$</RegExp>
+    </LogLineMatcher>
+    <LogLineMatcher>
+        <Name>Some valid matcher for logcat_main 10</Name>
+        <Source>logcat_main</Source>
+        <RegExp>^(\d{2}-\d{2} \d{2}:\d{2}:\d{2}.\d{3}) .*?GC_CONCURRENT freed ([0-9].*?)K, .*?$</RegExp>
+    </LogLineMatcher>
+    <LogLineMatcher>
+        <Name>Some valid matcher for kernel 11</Name>
+        <Source>kernel</Source>
+        <RegExp>^(\d{2}-\d{2} \d{2}:\d{2}:\d{2}.\d{3}) .*?GC_CONCURRENT freed ([0-9].*?)K, .*?$</RegExp>
+    </LogLineMatcher>
+    <LogLineMatcher>
+        <Name>Some valid matcher for logcat_system 12</Name>
+        <Source>logcat_system</Source>
+        <RegExp>^(\d{2}-\d{2} \d{2}:\d{2}:\d{2}.\d{3}) .*?GC_CONCURRENT freed ([0-9].*?)K, .*?$</RegExp>
+    </LogLineMatcher>
+    <LogLineMatcher>
+        <Name>Some valid matcher for logcat_events 13</Name>
+        <Source>logcat_events</Source>
+        <RegExp>^(\d{2}-\d{2} \d{2}:\d{2}:\d{2}.\d{3}) .*?GC_CONCURRENT freed ([0-9].*?)K, .*?$</RegExp>
+    </LogLineMatcher>
+    <LogLineMatcher>
+        <Name>Some valid matcher for logcat_events 14</Name>
+        <Source>logcat_events</Source>
+        <RegExp>^(\d{2}-\d{2} \d{2}:\d{2}:\d{2}.\d{3}) .*?GC_CONCURRENT freed ([0-9].*?)K, .*?$</RegExp>
+    </LogLineMatcher>
+    <LogLineMatcher>
+        <Name>Some valid matcher for logcat_radio 15</Name>
+        <Source>logcat_radio</Source>
+        <RegExp>^(\d{2}-\d{2} \d{2}:\d{2}:\d{2}.\d{3}) .*?GC_CONCURRENT freed ([0-9].*?)K, .*?$</RegExp>
+    </LogLineMatcher>
+    <LogLineMatcher>
+        <Name>Some valid matcher for logcat_main 16</Name>
+        <Source>logcat_main</Source>
+        <RegExp>^(\d{2}-\d{2} \d{2}:\d{2}:\d{2}.\d{3}) .*?GC_CONCURRENT freed ([0-9].*?)K, .*?$</RegExp>
+    </LogLineMatcher>
+    <LogLineMatcher>
+        <Name>Some valid matcher for logcat_main 17</Name>
+        <Source>logcat_main</Source>
+        <RegExp>^(\d{2}-\d{2} \d{2}:\d{2}:\d{2}.\d{3}) .*?GC_CONCURRENT freed ([0-9].*?)K, .*?$</RegExp>
+    </LogLineMatcher>
+    <LogLineMatcher>
+        <Name>Some valid matcher for logcat_main 18</Name>
+        <Source>logcat_main</Source>
+        <RegExp>^(\d{2}-\d{2} \d{2}:\d{2}:\d{2}.\d{3}) .*?GC_CONCURRENT freed ([0-9].*?)K, .*?$</RegExp>
+    </LogLineMatcher>
+    <LogLineMatcher>
+        <Name>Some valid matcher for kernel 19</Name>
+        <Source>kernel</Source>
+        <RegExp>^(\d{2}-\d{2} \d{2}:\d{2}:\d{2}.\d{3}) .*?GC_CONCURRENT freed ([0-9].*?)K, .*?$</RegExp>
+    </LogLineMatcher>
+</LogLineMatchers>

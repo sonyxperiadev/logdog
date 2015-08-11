@@ -1,0 +1,82 @@
+-------------------------------------
+Introduction
+-------------------------------------
+
+logdog is a desktop Java program that presents data from Android's
+logging framework 'logcat' as graphs. The user defines regular
+expressions to match desired log lines. The regexps can contain regexp
+groups that defines the values to be plotted on the y-axis. The actual
+value from a group is parsed as an integer, float or a hex value. The
+x-axis is always the time.
+
+For instance, the regexp below matches log lines that start with any
+text followed by a V (for verbose) and the log tag "Preeffect:". The
+text " EFFECT_CMD_SET_VOLUME vol = " is then matched exactly followed
+by a regexp group (enclosed in ()) until the end of line ($). Since
+the regexp group starts with 0x the value is assumed to be
+hexadecimal. The actual value (matched by ".*?") is parsed by logdog
+and plotted.
+
+.* V Preeffect: EFFECT_CMD_SET_VOLUME vol = (0x.*?)$
+
+You should be able to compile and run logdog on all platforms
+supported by Java but it has only been tested on Ubuntu.
+
+Please feel free to contact me at lars.brange@aurum.se.
+
+
+-------------------------------------
+Prerequisites
+-------------------------------------
+
+Eclipse
+Java SE 1.7 JRE
+
+If building and running outside of Eclipse:
+bash
+ant
+
+
+-------------------------------------
+Runnning logdog from within Eclipse
+-------------------------------------
+
+<root> below is the logdog git directory.
+
+ 1. Select 'File / New / Java Project' from the menu.
+ 2. Enter a project name (logdog).
+ 3. Uncheck 'Use default location' and browse to <root>/logdog.
+ 4. Ensure that at least a Java 1.6 JRE is selected at 'Use an execution environment JRE'.
+ 5. Click Next.
+ 6. Select the Libraries tab and click "Add External JARs".
+ 7. Browse to <root>/jfreechart-1.0.19/lib and select these jars:
+    hamcrest-core-1.3.jar, jcommon-1.0.23.jar, jfreechart-1.0.19.jar and junit-4.11.jar.
+    Press Ctrl when selecting each file. Click OK.
+ 8. Click Finish.
+ 9. If you get errors for methods with the @Override annotation you need to do this:
+    a. Select 'Window / Preferences' from the menu.
+    b. Goto 'Java / Compiler' and change 'Compiler compliance level' to at least 1.6.
+10. Right-click the logdog node in Package Explorer and select "Run As / Java Application".
+11. Select logdog from the list and click OK.
+
+
+-------------------------------------
+Running logdog from the command-line
+-------------------------------------
+
+You must first create a jar-file in <root>/lib. This can be done in two ways.
+
+A: From the command-line (requires bash and ant):
+$ <root>/bin/build
+
+B: From Eclipse:
+1. Rightclick 'logdog' in Eclipse and select 'Export...'.
+2. Select 'Runnable JAR File', click Next.
+3. Select a logdog 'Launch configuration'.
+4. At 'Export destination' enter <root>/lib/logdog.jar.
+5. Click 'Finish'. You might get a few warnings, ignore them.
+
+In both cases the resulting jar-file will be in <root>/lib
+
+Then run logdog from the command-line by issuing:
+$ <root>/bin/logdog

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="build" name="logdog">
+    <property name="JAR_DIR" value="../lib/"/>
+    <property name="CLASSES" value="./classes"/>
+    <property name="JFREECHART_LIB" value="../jfreechart-1.0.19/lib"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.7"/>
+    <property name="source" value="1.7"/>
+    <path id="logdog.classpath">
+        <pathelement location="${CLASSES}"/>
+        <pathelement location="${JFREECHART_LIB}/jcommon-1.0.23.jar"/>
+        <pathelement location="${JFREECHART_LIB}/jfreechart-1.0.19.jar"/>
+        <pathelement location="${JFREECHART_LIB}/junit-4.11.jar"/>
+    </path>
+    <target name="init">
+        <copy includeemptydirs="false" todir=".">
+            <fileset dir=".">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="${CLASSES}" quiet="yes"/>
+        <delete dir="${JAR_DIR}" quiet="yes"/>
+    </target>
+    <target name="build" depends="init">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <mkdir dir="${CLASSES}"/>
+        <javac debug="false" debuglevel="${debuglevel}" destdir="${CLASSES}"
+               source="${source}" target="${target}" includeantruntime="false">
+            <src path="."/>
+            <classpath refid="logdog.classpath"/>
+        </javac>
+    </target>
+    <target name="jar" depends="build">
+        <jar destfile="${JAR_DIR}/logdog.jar" filesetmanifest="mergewithoutmain"
+            basedir="${CLASSES}">
+            <manifest>
+                <attribute name="Main-Class" value="logdog.logdog"/>
+            </manifest>
+            <fileset dir="./src">
+                <include name="resources/**/*"/>
+            </fileset>
+            <zipfileset excludes="META-INF/*.SF" src="${JFREECHART_LIB}/jcommon-1.0.23.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${JFREECHART_LIB}/jfreechart-1.0.19.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${JFREECHART_LIB}/junit-4.11.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${JFREECHART_LIB}/hamcrest-core-1.3.jar"/>
+        </jar>
+    </target>
+</project>

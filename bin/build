@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Valid targets are 'build', 'jar' and 'clean'.
+
+TARGET=jar
+if [ $# != 0 ]; then
+    TARGET=$1
+fi
+
+ant -k -f logdog/build.xml $TARGET

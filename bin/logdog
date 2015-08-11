@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# Script for running logdog.
+
+# We will look for supported JVMs assuming all are located in
+# /usr/lib/jvm. It doesn't seem possible to get a list of installed
+# JVMs in any other way.
+# When running logdog on Ubuntu 12.04, HotSpot doesn't work (severe
+# load of the XServer) so we only allow openjdk JVMs (Java 6 and 7).
+JVMS_PATH=/usr/lib/jvm
+
+# It seems the handling of max available heap has changed between
+# Ubuntu 10.04 and 12.04. This means we must set the max heap size
+# explicitly.
+MAX_JAVA_HEAP_SPACE=1500m
+
+JVMS=(
+    ${JVMS_PATH}/java-7-openjdk-amd64/bin/java
+    ${JVMS_PATH}/java-7-openjdk/bin/java
+    ${JVMS_PATH}/java-6-openjdk-amd64/bin/java
+    ${JVMS_PATH}/java-6-openjdk/bin/java
+)
+
+for jvm in ${JVMS[@]}; do
+    if [ -x ${jvm} ]; then
+        ${jvm} -Xmx${MAX_JAVA_HEAP_SPACE} -jar ./lib/logdog.jar $@
+        exit 0
+    fi
+done
+
+echo "Cannot start logdog, unable to find a supported Java Virtual Machine."
+echo "Please install a supported JVM by running either one of these commands:"
+echo "  sudo apt-get install openjdk-7-jre"
+echo "  sudo apt-get install openjdk-6-jre"
+exit 2
